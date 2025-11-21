@@ -1,5 +1,36 @@
 GET http://localhost:3000
 
+
+### Send FETCH SONGS REQUEST
+GET http://localhost:3000/property
+
+### Fetch single
+GET http://localhost:3000/property/12?sort=true
+
+### create property
+POST http://localhost:3000/property
+Content-Type: application/json
+
+{
+      "name": "Kh. shakil",
+      "description": "shakil description",
+      # "type": "Condo",
+      "area": 12
+}
+
+
+### update property
+PATCH  http://localhost:3000/property/-1
+Content-Type: application/json
+
+{
+      "name": "Kh. shakil",
+      "description": "s",
+      "area": 9349
+}
+
+
+
 ### Send FETCH SONGS REQUEST
 GET http://localhost:3000/songs
 
