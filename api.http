@@ -1,0 +1,19 @@
+GET http://localhost:3000
+
+### Send FETCH SONGS REQUEST
+GET http://localhost:3000/songs
+
+
+### Send FETCH SINGE SONG REQUEST
+GET http://localhost:3000/songs/abc
+
+### Insert song
+POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+      "title": "lasting lover",
+      "artists": ["siagla", "Martin"],
+      "releasedDate": "2022-09-29",
+      "duration": "02:34"
+}
