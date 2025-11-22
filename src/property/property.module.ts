@@ -4,7 +4,7 @@ import { APP_PIPE } from "@nestjs/core";
 
 @Module({
       controllers: [PropertyController],
-      /* providers: [
+      providers: [
             {
                   provide: APP_PIPE,
                   // useClass: ValidationPipe, // if don't need any options, then we can use useClass,
@@ -17,6 +17,6 @@ import { APP_PIPE } from "@nestjs/core";
                         },
                   })
             }
-      ], */
+      ],
 })
 export class PropertyModule { }

@@ -20,12 +20,14 @@ Content-Type: application/json
 
 
 ### update property
-PATCH  http://localhost:3000/property/-1
+PATCH  http://localhost:3000/property/1
 Content-Type: application/json
+access-token: 'access-token by kh'
+
 
 {
       "name": "Kh. shakil",
-      "description": "s",
+      "description": "sasdf",
       "area": 9349
 }
 
