@@ -6,17 +6,17 @@ import { LoggerMiddleware } from './common/middleware/logger/logger.middleware';
 import { SongsController } from './songs/songs.controller';
 import { DevConfigService } from './common/providers/DevConfigService';
 import { PropertyModule } from './property/property.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { pgConfig } from 'dbConfig';
 
-
-const devConfig = {port: 3000};
-const proConfig = {port: 4000};
+const devConfig = { port: 3000 };
+const proConfig = { port: 4000 };
 
 @Module({
-  imports: [SongsModule, PropertyModule],
+  imports: [SongsModule, PropertyModule, TypeOrmModule.forRoot(pgConfig)],
   controllers: [AppController],
   providers: [
     AppService,
-
     // Class provider
     {
       provide: DevConfigService,
@@ -26,7 +26,7 @@ const proConfig = {port: 4000};
     // Factory provider
     {
       provide: 'CONFIG',
-      useFactory: ()=> {
+      useFactory: () => {
         return process.env.NODE_ENV === 'development' ? devConfig : proConfig
       }
     }
