@@ -4,7 +4,7 @@ import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConne
 export const pgConfig: PostgresConnectionOptions = {
 
       // Don't put his here, Instead put in the env file
-      url: "",
+      url: "postgresql://neondb_owner:npg_9jXcpM8CrUmx@ep-blue-leaf-ahsvbewt-pooler.c-3.us-east-1.aws.neon.tech/realEstateDB?sslmode=require&channel_binding=require",
       type: "postgres",
       port: 3306,
       // entities: [Property],

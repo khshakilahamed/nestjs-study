@@ -5,7 +5,7 @@ GET http://localhost:3000
 GET http://localhost:3000/property
 
 ### Fetch single
-GET http://localhost:3000/property/12?sort=true
+GET http://localhost:3000/property/15
 
 ### create property
 POST http://localhost:3000/property
@@ -13,11 +13,9 @@ Content-Type: application/json
 
 {
       "name": "Kh. shakil",
-      "description": "shakil description",
-      # "type": "Condo",
-      "area": 12
+      "description": "shaki",
+      "price": 12
 }
-
 
 ### update property
 PATCH  http://localhost:3000/property/1
@@ -26,11 +24,14 @@ access-token: 'access-token by kh'
 
 
 {
-      "name": "Kh. shakil",
-      "description": "sasdf",
-      "area": 9349
+      # "name": "Kh. shakil",
+      # "description": "sasdf",
+      "price": 9349
 }
 
+
+### Delete property
+DELETE  http://localhost:3000/property/1
 
 
 ### Send FETCH SONGS REQUEST
