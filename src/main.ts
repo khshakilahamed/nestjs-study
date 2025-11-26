@@ -9,6 +9,8 @@ async function bootstrap() {
     whitelist: true,
     forbidNonWhitelisted: true,
   })) // for validation */
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(3000);
+
+  // console.log(process.env.URL);
 }
 bootstrap();

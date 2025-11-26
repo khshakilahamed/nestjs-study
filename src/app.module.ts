@@ -7,13 +7,27 @@ import { SongsController } from './songs/songs.controller';
 import { DevConfigService } from './common/providers/DevConfigService';
 import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { pgConfig } from 'dbConfig';
+import { ConfigModule } from '@nestjs/config';
+import dbConfig from './config/dbConfig';
+import dbConfigProduction from './config/db.config.production';
 
 const devConfig = { port: 3000 };
 const proConfig = { port: 4000 };
 
 @Module({
-  imports: [SongsModule, PropertyModule, TypeOrmModule.forRoot(pgConfig)],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      expandVariables: true,
+      load: [dbConfig, dbConfigProduction]
+    }),
+    SongsModule,
+    PropertyModule,
+    // TypeOrmModule.forRoot(pgConfig),
+    TypeOrmModule.forRootAsync({
+      useFactory: process.env.NODE_ENV === "production" ? dbConfigProduction : dbConfig,
+    }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,

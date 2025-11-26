@@ -1,8 +1,8 @@
 GET http://localhost:3000
 
 
-### Send FETCH SONGS REQUEST
-GET http://localhost:3000/property
+### Send FETCH Property REQUEST
+GET http://localhost:3000/property?skip=30&limit=15
 
 ### Fetch single
 GET http://localhost:3000/property/15
