@@ -1,5 +1,16 @@
 GET http://localhost:3000
 
+### create user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+      "firstName": "kh",
+      "lastName": "Shakil",
+      "email": "shakil@gmail.com",
+      "password": "123456"
+}
+
 
 ### Send FETCH Property REQUEST
 GET http://localhost:3000/property?skip=30&limit=15

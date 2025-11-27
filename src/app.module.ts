@@ -8,6 +8,7 @@ import { DevConfigService } from './common/providers/DevConfigService';
 import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
 import dbConfig from './config/dbConfig';
 import dbConfigProduction from './config/db.config.production';
 
@@ -27,6 +28,7 @@ const proConfig = { port: 4000 };
     TypeOrmModule.forRootAsync({
       useFactory: process.env.NODE_ENV === "production" ? dbConfigProduction : dbConfig,
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [
