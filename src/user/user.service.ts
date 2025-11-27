@@ -7,11 +7,19 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
-  constructor(@InjectRepository(User) private UserRepo: Repository<User>){}
-  
+  constructor(@InjectRepository(User) private UserRepo: Repository<User>) { }
+
   async create(createUserDto: CreateUserDto) {
     const user = await this.UserRepo.create(createUserDto)
     return await this.UserRepo.save(user);
+  }
+
+  async findByEmail(email: string) {
+    return await this.UserRepo.findOne({
+      where: {
+        email,
+      }
+    })
   }
 
   findAll() {

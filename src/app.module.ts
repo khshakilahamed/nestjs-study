@@ -9,6 +9,7 @@ import { PropertyModule } from './property/property.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 import dbConfig from './config/dbConfig';
 import dbConfigProduction from './config/db.config.production';
 
@@ -29,6 +30,7 @@ const proConfig = { port: 4000 };
       useFactory: process.env.NODE_ENV === "production" ? dbConfigProduction : dbConfig,
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
