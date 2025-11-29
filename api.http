@@ -21,6 +21,12 @@ Content-Type: application/json
 }
 
 
+### get profile
+GET http://localhost:3000/user/profile
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTc2NDQ0Mjc2NiwiZXhwIjoxODUwODQyNzY2fQ.84UFKorM8f_Kck3GOADDrd57xNgHQOSFu4d376DOfEA
+
+
 ### Send FETCH Property REQUEST
 GET http://localhost:3000/property?skip=30&limit=15
 
