@@ -1,0 +1,40 @@
+
+### find students
+GET http://localhost:3000/student
+
+### find single student
+GET http://localhost:3000/student/2
+
+
+### create student
+POST http://localhost:3000/student
+Content-Type: application/json
+
+{
+      "name": "admin",
+      "age": "20"
+}
+
+
+### Update student
+PUT http://localhost:3000/student/3
+Content-Type: application/json
+
+{
+      "name": "admin",
+      "age": "20"
+}
+
+
+### Partial Update student
+PATCH http://localhost:3000/student/3
+Content-Type: application/json
+
+{
+      "age": "23"
+}
+
+
+
+### Delete student
+DELETE  http://localhost:3000/student/1
