@@ -1,5 +1,13 @@
 
 
+GET http://localhost:3000/user-roles/admin-data
+Content-Type: application/json
+Authorization: Bearer my-secret-token
+x-user-role: admin
+
+
+
+###
 POST http://localhost:3000/myname/custom
 Content-Type: application/json
 
@@ -23,6 +31,9 @@ Content-Type: application/json
 
 
 
+### get products
+GET http://localhost:3000/product
+Authorization: Bearer my-secret-token
 
 
 
