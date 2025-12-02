@@ -1,5 +1,9 @@
 
 
+GET http://localhost:3000/exception/hello/abc
+
+
+###
 GET http://localhost:3000/user-roles/admin-data
 Content-Type: application/json
 Authorization: Bearer my-secret-token
