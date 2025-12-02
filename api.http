@@ -1,4 +1,22 @@
 
+### Get customer
+GET http://localhost:3000/customer
+
+
+### create student
+POST http://localhost:3000/customer
+Content-Type: application/json
+
+{
+      "name": "Kh.",
+      "age": 20
+}
+
+
+
+
+
+
 ### find students
 GET http://localhost:3000/student
 
