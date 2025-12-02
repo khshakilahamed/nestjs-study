@@ -1,4 +1,13 @@
 
+
+POST http://localhost:3000/myname/custom
+Content-Type: application/json
+
+{
+      "name": "Kh."
+}
+
+
 ### Get customer
 GET http://localhost:3000/customer
 
