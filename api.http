@@ -1,6 +1,6 @@
 
 
-GET http://localhost:3000/exception/hello/abc
+GET http://localhost:3000/exception/hello/1
 
 
 ###
