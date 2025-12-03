@@ -1,5 +1,24 @@
 
 
+
+###
+POST http://localhost:3000/student
+Content-Type: application/json
+
+{
+      "name": "Kh. Shakil",
+      "age": "23",
+      "email": "shakil@gmail.com"
+}
+
+###
+GET  http://localhost:3000/student
+
+###
+GET  http://localhost:3000/student/693012c0d09b5b7698ae4c12
+
+
+
 ###
 GET http://localhost:3000/ev
 
