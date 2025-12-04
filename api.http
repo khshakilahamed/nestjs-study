@@ -2,13 +2,27 @@
 
 
 ###
-POST http://localhost:3000/student
+DELETE  http://localhost:3000/student/6930129bd09b5b7698ae4c0d
+
+
+###
+PATCH  http://localhost:3000/student/6930129bd09b5b7698ae4c0d
 Content-Type: application/json
 
 {
-      "name": "Kh. Shakil",
-      "age": "23",
-      "email": "shakil@gmail.com"
+      # "name": "Kh. Shakil",
+      # "age": "23",
+      "email": "shakil223@gmail.com"
+}
+
+###
+PUT http://localhost:3000/student/6930129bd09b5b7698ae4c0d
+Content-Type: application/json
+
+{
+      # "name": "Kh. Shakil",
+      # "age": "23",
+      "email": "shakil223@gmail.com"
 }
 
 ###
