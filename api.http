@@ -1,5 +1,31 @@
 
 
+### create library
+POST http://localhost:3000/library
+
+### get library
+GET http://localhost:3000/library
+
+
+### create product
+POST http://localhost:3000/product
+
+### find employee
+GET http://localhost:3000/employee
+
+
+### create employee
+POST http://localhost:3000/employee
+
+
+### find user
+GET http://localhost:3000/user
+
+
+### create user
+POST http://localhost:3000/user
+
+
 
 ###
 DELETE  http://localhost:3000/student/6930129bd09b5b7698ae4c0d

@@ -1,10 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserController } from './user/user.controller';
-import { UserService } from './user/user.service';
-import { ProductController } from './product/product.controller';
-import { ProductService } from './product/product.service';
 import { EmployeeModule } from './employee/employee.module';
 import { CategoryModule } from './category/category.module';
 import { MynameController } from './myname/myname.controller';
@@ -17,6 +13,9 @@ import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudentModule } from './student/student.module';
+import { UserModule } from './user/user.module';
+import { ProductModule } from './product/product.module';
+import { LibraryModule } from './library/library.module';
 
 @Module({
   imports: [
@@ -28,9 +27,12 @@ import { StudentModule } from './student/student.module';
     }),
     MongooseModule.forRoot(process.env.MONGO_URI!),
     StudentModule,
+    UserModule,
+    ProductModule,
+    LibraryModule,
   ],
-  controllers: [AppController, UserController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController],
-  providers: [AppService, UserService, ProductService, DatabaseService],
+  controllers: [AppController, MynameController, UserRolesController, ExceptionController, DatabaseController],
+  providers: [AppService, DatabaseService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
