@@ -1,5 +1,14 @@
 
 
+### get developers
+GET http://localhost:3000/project/developers
+
+### get project
+GET http://localhost:3000/project
+
+### create project
+POST http://localhost:3000/project/seed
+
 ### create library
 POST http://localhost:3000/library
 

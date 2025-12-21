@@ -16,6 +16,7 @@ import { StudentModule } from './student/student.module';
 import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
 import { LibraryModule } from './library/library.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { LibraryModule } from './library/library.module';
     UserModule,
     ProductModule,
     LibraryModule,
+    ProjectModule,
   ],
   controllers: [AppController, MynameController, UserRolesController, ExceptionController, DatabaseController],
   providers: [AppService, DatabaseService],
