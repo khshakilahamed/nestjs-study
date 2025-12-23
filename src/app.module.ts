@@ -3,6 +3,7 @@ import { LoggerMiddleware } from './middleware/logger/logger.middleware';
 import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EmployeesModule } from './employees/employees.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    UserModule
+    UserModule,
+    EmployeesModule
   ],
   controllers: [],
   providers: [],

@@ -1,4 +1,13 @@
 
+### create employee
+POST http://localhost:3000/employees
+Content-Type: application/json
+
+{
+      "name": "Kh. Shakil",
+      "position": "Backend Developer",
+      "department": "Engineering"
+}
 
 ### get developers
 GET http://localhost:3000/project/developers
