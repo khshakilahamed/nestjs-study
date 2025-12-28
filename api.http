@@ -1,4 +1,10 @@
 
+### get employee
+GET http://localhost:3000/employees/2
+
+### get employees
+GET http://localhost:3000/employees
+
 ### create employee
 POST http://localhost:3000/employees
 Content-Type: application/json
