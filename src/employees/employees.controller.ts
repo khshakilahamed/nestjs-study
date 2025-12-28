@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { Employee } from './employees.entity';
 import { EmployeesService } from './employees.service';
 
@@ -19,6 +19,16 @@ export class EmployeesController {
       @Get(':id')
       async findOne(@Param('id') id: number): Promise<Employee>{
             return this.employeeService.findOne(id);
+      }
+
+      @Put(':id')
+      async updateEmployee(@Param('id') id: number, @Body() body: Partial<Employee>){
+            return this.employeeService.update(id, body)
+      }
+
+      @Delete(':id')
+      async deleteEmployee(@Param('id') id: number){
+            return this.employeeService.delete(id)
       }
       
 }

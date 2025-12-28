@@ -21,13 +21,35 @@ export class EmployeesService {
             return this.employeeRepository.find();
       }
 
-      async findOne(id: number): Promise<Employee>{
-            const employee = await this.employeeRepository.findOneBy({id});
+      async findOne(id: number): Promise<Employee> {
+            const employee = await this.employeeRepository.findOneBy({ id });
 
-            if(!employee){
+            if (!employee) {
                   throw new NotFoundException(`Employee with ID ${id} not found.`)
             }
 
             return employee;
+      }
+
+      async update(id: number, updatedData: Partial<Employee>) {
+            const employee = await this.employeeRepository.findOneBy({ id });
+
+            if (!employee) {
+                  throw new NotFoundException(`Employee with ID ${id} not found.`)
+            }
+
+            const updated = Object.assign(employee, this.update);
+
+            return this.employeeRepository.save(updated);
+      }
+
+      async delete(id: number): Promise<{message: string}>{
+            const result = await this.employeeRepository.delete(id);
+
+            if (result.affected === 0) {
+                  throw new NotFoundException(`Employee with ID ${id} not found.`)
+            }
+
+            return {message: `Employee with ID ${id} has been deleted successfully!`};
       }
 }
