@@ -1,4 +1,7 @@
 
+### search employee
+GET  http://localhost:3000/employees/search?department=Law
+
 ### delete employee
 DELETE  http://localhost:3000/employees/1
 
@@ -22,9 +25,9 @@ POST http://localhost:3000/employees
 Content-Type: application/json
 
 {
-      "name": "Kh. Shakil",
+      "name": "Tazriyan",
       "position": "Backend Developer",
-      "department": "Engineering"
+      "department": "Law"
 }
 
 ### get developers
