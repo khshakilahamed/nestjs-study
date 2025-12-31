@@ -1,5 +1,29 @@
 
-### supabase
+### profile
+GET  http://localhost:3000/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNoYWtpbEBnbWFpbC5jb20iLCJzdWIiOiI2OTU1NTZhOTEwMWViZTllNDllN2IxM2IiLCJpYXQiOjE3NjcyMDA2MzQsImV4cCI6MTc2NzIwNDIzNH0.34DaXG3--y-5fYRSrnjLt5Dzl-L1W2E73_ntRWYoGSM
+
+
+### login
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+      "email": "shakil@gmail.com",
+      "password": "123456"
+}
+
+### Sign up
+POST  http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+      "email": "shakil@gmail.com",
+      "password": "123456"
+}
+
+
+### supabase Authentication
 POST https://bicngqihxooqjuyvisff.supabase.co/auth/v1/token?grant_type=password
 Content-Type: application/json
 apiKey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpY25ncWloeG9vcWp1eXZpc2ZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYzNDA0MjcsImV4cCI6MjA4MTkxNjQyN30.NfkvIfCc3iJZQ52MxXlopJMLo6_FLyUJpHrkroM6j58

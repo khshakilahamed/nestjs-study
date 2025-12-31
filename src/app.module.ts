@@ -1,29 +1,33 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { LoggerMiddleware } from './middleware/logger/logger.middleware';
-import { UserModule } from './user/user.module';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { EmployeesModule } from './employees/employees.module';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { User, UserSchema } from './auth/user.schema';
+import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtStrategy } from './auth/jwt.strategy';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true,
+      isGlobal: true
     }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      url: process.env.SUPABASE_DATABASE_URL,
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-    UserModule,
-    EmployeesModule
+    MongooseModule.forRoot(process.env.MONGO_URI!),
+    MongooseModule.forFeature([{name: User.name, schema: UserSchema}]),
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        secret: config.get<string>('JWT_SECRET'),
+        signOptions: {expiresIn: '1h'}
+      })
+    })
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AuthController],
+  providers: [AuthService, JwtStrategy],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
+    // consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }
