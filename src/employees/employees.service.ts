@@ -38,7 +38,7 @@ export class EmployeesService {
                   throw new NotFoundException(`Employee with ID ${id} not found.`)
             }
 
-            const updated = Object.assign(employee, this.update);
+            const updated = Object.assign(employee, updatedData);
 
             return this.employeeRepository.save(updated);
       }
